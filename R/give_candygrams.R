@@ -15,7 +15,7 @@ give_candygrams <- function(person, number,
 
   stopifnot(number > 0)
 
-  if (str_detect(person, "Gretchen")) {
+  if (person == "Gretchen") {
 
     return(cat("None for Gretchen Weiners."))
 
@@ -42,22 +42,17 @@ give_candygrams <- function(person, number,
 #' @param number How many grams they got
 #'
 #' @return A string (possibly blank)
+
 add_commentary <- function(person, number) {
 
-  if (stringr::str_detect(person, "Aaron")) {
-
+  if (person == "Aaron") {
     return("They are from Regina.")
-
   }
-
 
   if (number > 3) {
-
     return(glue::glue("You go, {person}!"))
-
   }
 
-
   return("")
-
 }
+
